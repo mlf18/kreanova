@@ -16,10 +16,16 @@ Route::get('/', function () {
 });
 
 Route::resource('pengusul', 'PengusulController');
+
+Route::get('upload', 'PengusulController@upload');
+Route::get('quesioner_pengusul', 'PengusulController@quesioner');
+
 Route::resource('penguji', 'PengujiController');
 Route::resource('admin', 'AdminController');
 Route::resource('proposal','Proposalcontroller');
+Route::resource('kepaladaerah', 'BupatiController');
 
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+

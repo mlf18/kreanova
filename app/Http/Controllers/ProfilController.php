@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class PengusulController extends Controller
+use App\Profil;
+
+class ProfilController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +17,7 @@ class PengusulController extends Controller
      */
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -25,7 +27,8 @@ class PengusulController extends Controller
      */
     public function create()
     {
-        return view('admin.pengusul.create');
+        return view('')
+        
     }
 
     /**
@@ -36,7 +39,8 @@ class PengusulController extends Controller
      */
     public function store(Request $request)
     {
-        
+        Pengusul::create($request->all());
+        Profil::create($request->all());
     }
 
     /**
@@ -82,15 +86,5 @@ class PengusulController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function upload()
-    {
-        return view('page.pengusul.upload_krenova');
-    }
-
-    public function quesioner()
-    {
-        return view('page.pengusul.quesioner_krenova');
     }
 }

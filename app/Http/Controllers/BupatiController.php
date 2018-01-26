@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class PengusulController extends Controller
+class BupatiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class PengusulController extends Controller
      */
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -25,7 +25,7 @@ class PengusulController extends Controller
      */
     public function create()
     {
-        return view('admin.pengusul.create');
+        return view('admin.kepaladaerah.quesioner_bupati');
     }
 
     /**
@@ -36,7 +36,7 @@ class PengusulController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //
     }
 
     /**
@@ -82,15 +82,5 @@ class PengusulController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function upload()
-    {
-        return view('page.pengusul.upload_krenova');
-    }
-
-    public function quesioner()
-    {
-        return view('page.pengusul.quesioner_krenova');
     }
 }
