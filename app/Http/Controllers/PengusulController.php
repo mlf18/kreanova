@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Pengusul;
+
 class PengusulController extends Controller
 {
     /**
