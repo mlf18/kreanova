@@ -10,22 +10,19 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::resource('pengusul', 'PengusulController');
-
-Route::get('upload', 'PengusulController@upload');
-Route::get('quesioner_pengusul', 'PengusulController@quesioner');
-
-Route::resource('penguji', 'PengujiController');
-Route::resource('admin', 'AdminController');
-Route::resource('proposal','Proposalcontroller');
-Route::resource('kepaladaerah', 'BupatiController');
-
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+Route::resources([
+	'pengusul' => 'PengusulController',
+	'penguji' => 'PengujiController',
+	'admin' => 'AdminController',
+	'quesioner' => 'QuesionerController',
+	'bupati' =>'BupatiController',
+	'permission' =>'PermissionController',
+	'role' => 'RoleController',
+	'test' => 'TestController',
+	'users' => 'UserController',
+	'proposals' => 'ProposalController'
+]);

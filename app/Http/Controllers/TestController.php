@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Bupati;
+use App\Role;
 
-class BupatiController extends Controller
+class TestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,10 @@ class BupatiController extends Controller
      */
     public function index()
     {
-        //
+
+         $role= Role::all();
+        
+        return view('test.index', compact('role'));
     }
 
     /**
@@ -27,7 +30,7 @@ class BupatiController extends Controller
      */
     public function create()
     {
-        return view('kabupaten.create');
+        //
     }
 
     /**
@@ -38,16 +41,7 @@ class BupatiController extends Controller
      */
     public function store(Request $request)
     {
-            $bupati = new Bupati;
-            $bupati->alokasi_anggaran = $request->input('alokasi_anggaran');
-            $bupati->perda = $request->input('perda');
-            $bupati->mou = $request->input('mou');
-            $bupati->lomba_kab = $request->input('lomba_kab');
-            $bupati->pameran_kab = $request->input('pameran_kab');
-            $bupati->jumlah_lombakab = $request->input('jumlah_lombakab');
-            $bupati->jumlah_pamerankab = $request->input('jumlah_pamerankab');
-            $bupati->pemenang_provinsi = $request->input('pemenang_provinsi');
-            $bupati->save();
+        //
     }
 
     /**

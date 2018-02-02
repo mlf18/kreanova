@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profil extends Model
 {
-    protected $fillable= ['id, kategori, nama, alamat, kabupaten, pekerjaan, jk, no_telp, email, anggota_1, anggota_2, anggota_3, anggota_4, anggota_5, judul, temuan, pengembangan'];
+    protected $fillable = ['id', 'kategori', 'nama', 'alamat', 'kabupaten', 'pekerjaan', 'jk', 'no_telp',' email', 'anggota_1', 'anggota_2', 'anggota_3', 'anggota_4', 'anggota_5', 'judul', 'temuan', 'pengembangan'];
 
     public function pengusuls()
     {
@@ -20,6 +20,6 @@ class Profil extends Model
 
     public function temuans()
     {
-    	return $this->belongsToMany(temuan::class);
+    	return $this->belongsToMany(Temuan::class);
     }
 }

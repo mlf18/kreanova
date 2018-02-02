@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Proposal;
+
+use App\Profil;
+
 class ProposalController extends Controller
 {
     /**
@@ -15,7 +19,8 @@ class ProposalController extends Controller
      */
     public function index()
     {
-        //
+        $proposal = Proposal::all();
+        return view('proposal.index', compact('proposal'));
     }
 
     /**
@@ -25,7 +30,9 @@ class ProposalController extends Controller
      */
     public function create()
     {
-        //
+        $profil = Profil::pluck('judul', 'id');
+
+        return view('proposal.create', compact('profil'));
     }
 
     /**
@@ -36,7 +43,47 @@ class ProposalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $proposal = new Proposal();
+        $proposal->abstrak = $request->input('abstrak');
+        $proposal->latar_belakang = $request->input('latar_belakang');
+        $proposal->maksud = $request->input('maksud');
+        $proposal->manfaat = $request->input('manfaat');
+        $proposal->spek_teknik = $request->input('spek_teknik');
+        $proposal->keunggulan = $request->input('keunggulan');
+        $proposal->penerapan = $request->input('penerapan');
+        $proposal->biaya_produksi = $request->input('biaya_produksi');
+        $proposal->prospek_bisnis = $request->input('prospek_bisnis');
+
+        // upload proposal
+
+        $file       = $request->file('proposal_name');
+        $fileName   = $file->getClientOriginalName();
+        $request->file('proposal_name')->move("proposal/", $fileName);
+
+        $proposal->proposal_name = $fileName;
+
+        //upload surat pernyataan keaslian
+
+        $file2       = $request->file('spk_name');
+        $fileName2   = $file2->getClientOriginalName();
+        $request->file('spk_name')->move("spk/", $fileName2);
+
+        $proposal->spk_name = $fileName2;
+
+        // upload lampiran 
+
+        $file3       = $request->file('lampiran_name');
+        $fileName3   = $file3->getClientOriginalName();
+        $request->file('lampiran_name')->move("lampiran/", $fileName3);
+
+        $proposal->lampiran_name = $fileName3;
+
+        $proposal->save();
+
+        $proposal->profils()->attach($request->input('profil_id'));
+
+
+        return redirect('/')->with('success', 'Saved');
     }
 
     /**

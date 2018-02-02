@@ -15,6 +15,7 @@ class CreateBupatisTable extends Migration
         
         Schema::create('bupatis', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nama_kabupaten');
             $table->text('alokasi_anggaran');
             $table->text('perda');
             $table->text('mou');
@@ -34,7 +35,7 @@ class CreateBupatisTable extends Migration
      */
     public function down()
     {
-        Schema::drop('bupatis');
+        Schema::dropIfExists('bupatis');
     }
 }
 

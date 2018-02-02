@@ -6,18 +6,16 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Bupati;
+use App\Role;
 
-class BupatiController extends Controller
+class RoleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        // $this->authorize('index.role');
+        $role= Role::all();
+        
+        return view('role.index', compact('role'));
     }
 
     /**
@@ -27,7 +25,8 @@ class BupatiController extends Controller
      */
     public function create()
     {
-        return view('kabupaten.create');
+        // $this->authorize('create.role');
+        return view('role.create');
     }
 
     /**
@@ -38,16 +37,12 @@ class BupatiController extends Controller
      */
     public function store(Request $request)
     {
-            $bupati = new Bupati;
-            $bupati->alokasi_anggaran = $request->input('alokasi_anggaran');
-            $bupati->perda = $request->input('perda');
-            $bupati->mou = $request->input('mou');
-            $bupati->lomba_kab = $request->input('lomba_kab');
-            $bupati->pameran_kab = $request->input('pameran_kab');
-            $bupati->jumlah_lombakab = $request->input('jumlah_lombakab');
-            $bupati->jumlah_pamerankab = $request->input('jumlah_pamerankab');
-            $bupati->pemenang_provinsi = $request->input('pemenang_provinsi');
-            $bupati->save();
+        // $this->authorize('store.role');
+        Role::create([
+            'name'=>$request->input('name')
+        ]);
+
+        return redirect('role');
     }
 
     /**
@@ -58,7 +53,12 @@ class BupatiController extends Controller
      */
     public function show($id)
     {
-        //
+        // $this->authorize('show.role');
+        $role = role::where('id', $id)->first();
+        $permission = $role->permissions;
+        foreach ($permission as  $value) {
+            echo $value->name;
+        }
     }
 
     /**
@@ -69,7 +69,11 @@ class BupatiController extends Controller
      */
     public function edit($id)
     {
-        //
+        // $this->authorize('edit.role');
+        $edit = Role::where('id', $id)->first();
+        //$role_all = Role::all();
+       
+        return view('role.edit', compact('edit'));
     }
 
     /**
@@ -81,7 +85,11 @@ class BupatiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $this->authorize('update.role');
+        $role = Role::find($id);
+        $role->update($request->all());
+
+        return redirect('role');
     }
 
     /**
@@ -92,6 +100,10 @@ class BupatiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // $this->authorize('delete.role');
+        $role = Role::find($id);
+        $role->delete();
+
+        return redirect('role');
     }
 }

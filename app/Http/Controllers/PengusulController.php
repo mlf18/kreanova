@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Pengusul;
 
+use App\Profil;
+
 class PengusulController extends Controller
 {
     /**
@@ -27,7 +29,7 @@ class PengusulController extends Controller
      */
     public function create()
     {
-        return view('admin.pengusul.create');
+        return view('pengusul.create');
     }
 
     /**
@@ -38,7 +40,39 @@ class PengusulController extends Controller
      */
     public function store(Request $request)
     {
-        
+
+        $pengusul = new Pengusul();
+        $pengusul->nama = $request->input('nama');
+        $pengusul->jabatan = $request->input('jabatan');
+        $pengusul->lembaga = $request->input('lembaga');
+        $pengusul->alamat = $request->input('alamat');
+        $pengusul->no_telp = $request->input('no_telp');
+        $pengusul->save();     
+      
+
+
+        $profil = new Profil();
+        $profil->kategori = $request->input('kategori');
+        $profil->nama = $request->input('nama');
+        $profil->alamat = $request->input('alamat');
+        $profil->kabupaten = $request->input('kabupaten');
+        $profil->pekerjaan = $request->input('pekerjaan');
+        $profil->jk = $request->input('jk');
+        $profil->no_telp = $request->input('no_telp');
+        $profil->email = $request->input('email');
+        $profil->anggota_1 = $request->input('anggota_1');
+        $profil->anggota_2 = $request->input('anggota_2');
+        $profil->anggota_3 = $request->input('anggota_3');
+        $profil->anggota_4 = $request->input('anggota_4');
+        $profil->anggota_5 = $request->input('anggota_5');
+        $profil->judul = $request->input('judul');
+        $profil->temuan = $request->input('temuan');
+        $profil->pengembangan = $request->input('pengembangan');
+        $profil->save();
+
+
+        return redirect('/')->with('success', 'Saved');
+
     }
 
     /**
@@ -86,13 +120,13 @@ class PengusulController extends Controller
         //
     }
 
-    public function upload()
-    {
-        return view('page.pengusul.upload_krenova');
-    }
+    // public function upload()
+    // {
+    //     return view('page.pengusul.upload_krenova');
+    // }
 
-    public function quesioner()
-    {
-        return view('page.pengusul.quesioner_krenova');
-    }
+    // public function quesioner()
+    // {
+    //     return view('page.pengusul.quesioner_krenova');
+    // }
 }
