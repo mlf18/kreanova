@@ -11,6 +11,14 @@
 |
 */
 Route::auth();
+Route::get('/', 'HomeController@index');
+Route::get('/artikel', 'HomeController@artikel');
+Route::get('/panduan', 'HomeController@panduan');
+Route::get('/direktori', 'HomeController@direktori');
+Route::get('/polling', 'HomeController@polling');
+Route::get('/rekap', 'HomeController@rekap');
+Route::get('/daftar-pemenang', 'HomeController@daftarpemenang');
+
 Route::group([
 	'middleware'=>['auth']] ,function(){
 
@@ -23,10 +31,10 @@ Route::group([
         return redirect('/home');
      });
 
-	Route::get('/', function()
-	{
-		return View::make('home');
-	});
+	// Route::get('/', function()
+	// {
+	// 	return View::make('home');
+	// });
 
 	Route::get('/charts', function()
 	{
@@ -91,7 +99,7 @@ Route::group([
 
 	
 
-	Route::get('/home', 'HomeController@index');
+	
 
 	Route::resources([
 		'pengusul' => 'PengusulController',

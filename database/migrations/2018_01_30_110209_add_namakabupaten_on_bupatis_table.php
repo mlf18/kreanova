@@ -13,7 +13,7 @@ class AddNamakabupatenOnBupatisTable extends Migration
     public function up()
     {
         Schema::table('bupatis', function (Blueprint $table) {
-            $table->string('nama_kabupaten')->nullable()->after('id');
+            $table->string('nama_kabupaten')->nullable()->change();
         });
     }
 
@@ -25,7 +25,7 @@ class AddNamakabupatenOnBupatisTable extends Migration
     public function down()
     {
         Schema::table('bupatis', function (Blueprint $table){
-
+            $table->string('nama_kabupaten')->change();
         });
     }
 }

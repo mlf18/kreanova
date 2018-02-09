@@ -40,6 +40,4 @@ class RedirectIfAuthenticated
                      return redirect()->route('pengusul.');
                  }   
     }
-
-
 }
