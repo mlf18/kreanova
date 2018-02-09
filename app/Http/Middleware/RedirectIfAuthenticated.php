@@ -23,4 +23,23 @@ class RedirectIfAuthenticated
 
         return $next($request);
     }
+
+    public function authenticated()
+    {
+        if($request->user()->hasRole('superadminadmin'))
+                 {
+                     // return redirect()->intended(route('admin.index'));
+                     return redirect()->route('users.index');
+                 }
+             if($request->user()->hasRole('admin'))
+                 {
+                     return redirect()->route('pengusul.index');
+                 }
+             if($request->user()->hasRole('inventor'))
+                 {
+                     return redirect()->route('pengusul.');
+                 }   
+    }
+
+
 }

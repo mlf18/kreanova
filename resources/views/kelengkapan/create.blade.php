@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('section')
 	<div class="container">
 		<div class="row">
 				<h3>CHECK LIST KELENGKAPAN ADMINISTRASI KRENOVA 20018</h3>

@@ -19,9 +19,18 @@ class ProposalController extends Controller
      */
     public function index()
     {
-        $proposal = Proposal::all();
+        $proposal = Proposal::get();
         return view('proposal.index', compact('proposal'));
     }
+
+    public function get($filename){
+
+		$entry = Fileentry::where('filename', '=', $filename)->firstOrFail();
+		$file = Storage::disk('proposal')->get($entry->filename);
+
+		return (new Response($file, 200))
+              ->header('Content-Type', $entry->mime);
+	}
 
     /**
      * Show the form for creating a new resource.
@@ -70,7 +79,7 @@ class ProposalController extends Controller
 
         $proposal->spk_name = $fileName2;
 
-        // upload lampiran 
+        // upload lampiran
 
         $file3       = $request->file('lampiran_name');
         $fileName3   = $file3->getClientOriginalName();

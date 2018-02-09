@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('content')
+@section('section')
 
 {!! Form::open(['url'=> route('role.store')]) !!}
 	@include('role._Form', ['submitButton' => 'Add Role'])
