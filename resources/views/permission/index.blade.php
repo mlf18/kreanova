@@ -1,9 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('content')
+@section('section')
 
+
+			
+		
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+	<div class="col-sm-12">
+		@section ('cotable_panel_title','Coloured Table')
+		@section ('cotable_panel_body')
+
 			<a href="{{ route('permission.create') }}" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>Create</a>
 			<table class="table" id="permissionTable">
 			<table class="table">
@@ -43,9 +49,12 @@
 			<div class="pagination">
 				{{ $permissions->links() }}
 			</div>	
-		</div>
-		
+
+		@endsection
+		@include('widgets.panel', array('header'=>true, 'as'=>'cotable'))
 	</div>
+</div>
+</div>
 
 @endsection
 

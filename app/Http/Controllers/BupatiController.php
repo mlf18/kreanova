@@ -17,7 +17,9 @@ class BupatiController extends Controller
      */
     public function index()
     {
-        //
+        $bupati = Bupati::all();
+
+        return view('kabupaten.index', compact('bupati'));
     }
 
     /**
@@ -39,6 +41,7 @@ class BupatiController extends Controller
     public function store(Request $request)
     {
             $bupati = new Bupati;
+            $bupati->nama_kabupaten = $request->input('nama_kabupaten');
             $bupati->alokasi_anggaran = $request->input('alokasi_anggaran');
             $bupati->perda = $request->input('perda');
             $bupati->mou = $request->input('mou');
@@ -48,6 +51,8 @@ class BupatiController extends Controller
             $bupati->jumlah_pamerankab = $request->input('jumlah_pamerankab');
             $bupati->pemenang_provinsi = $request->input('pemenang_provinsi');
             $bupati->save();
+
+            return redirect('bupati');
     }
 
     /**

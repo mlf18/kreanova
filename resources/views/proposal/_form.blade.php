@@ -1,8 +1,4 @@
-@extends('layouts.app')
 
-@section('content')
-	<div class="container">
-		<div class="row">
 				<div class="form-group">
 					<hr>
 					{!! Form::select('profil_id', $profil, null,  ['class'=>'form-control']) !!}	
@@ -75,6 +71,3 @@
 		
 					
        			{!! Form::submit($submitButton, ['class' => 'btn btn-Success']) !!}		
-		</div>
-	</div>
-@endsection

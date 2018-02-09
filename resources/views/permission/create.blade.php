@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('content')
+@section('section')
 	@if (count($errors) > 0)
 	    <div class="alert alert-danger">
 	        <ul>

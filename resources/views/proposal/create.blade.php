@@ -1,10 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('content')
-
-		
-
-				
+@section('section')	
         	@if (count($errors) > 0)
 	    <div class="alert alert-danger">
 	        <ul>
@@ -18,7 +14,7 @@
 	{!! Form::model($edit = new \App\Proposal, ['url'=> route('proposals.store'), 'method' => 'post', 'files' => true, 'files2' => true, 'files3' => true ]) !!}
 
 		 {!! csrf_field() !!}
-		@include('proposal._Form', ['submitButton' => 'Add Proposal'])		
+		@include('proposal._form', ['submitButton' => 'Add Proposal'])		
 	
 
 	{!! Form::close() !!}
