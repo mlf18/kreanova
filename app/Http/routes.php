@@ -18,7 +18,12 @@ Route::get('/direktori', 'HomeController@direktori');
 Route::get('/polling', 'HomeController@polling');
 Route::get('/rekap', 'HomeController@rekap');
 Route::get('/daftar-pemenang', 'HomeController@daftarpemenang');
-
+Route::get('/superadmin', function(){
+	return ('superadmin');
+});
+Route::get('/admins', function(){
+	return ('biasaadmins');
+});
 Route::group([
 	'middleware'=>['auth']] ,function(){
 

@@ -29,7 +29,14 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected function authenticated($request, $user)
+    {
+        if($user->role=="super"){
+            return redirect('/superadmin');
+        }else{
+            return redirect('/admins');
+        }
+    }
 
 
     /**
