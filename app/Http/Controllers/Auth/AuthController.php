@@ -32,9 +32,9 @@ class AuthController extends Controller
     protected function authenticated($request, $user)
     {
         if($user->role=="super"){
-            return redirect('/superadmin');
+            return redirect('superadmin');
         }else{
-            return redirect('/admins');
+            return redirect('admins');
         }
     }
 

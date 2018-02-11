@@ -369,7 +369,6 @@
            </div>
             <div class="row">  
                 @yield('section')
-
             </div>
             <!-- /#page-wrapper -->
         </div>

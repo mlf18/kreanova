@@ -112,6 +112,7 @@ Route::group([
 		'admin' => 'AdminController',
 		'quesioner' => 'QuesionerController',
 		'bupati' =>'BupatiController',
+		'profil' =>'ProfilController',
 		'permission' =>'PermissionController',
 		'role' => 'RoleController',
 		'test' => 'TestController',

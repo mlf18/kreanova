@@ -1,10 +1,6 @@
 @extends('layouts.admin')
 
 @section('section')
-
-
-			
-		
 	<div class="row">
 	<div class="col-sm-12">
 		@section ('cotable_panel_title','Coloured Table')

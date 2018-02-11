@@ -18,6 +18,7 @@ class ProfilController extends Controller
     public function index()
     {
         //
+        return view('inventor.profil.index');
     }
 
     /**
@@ -27,7 +28,7 @@ class ProfilController extends Controller
      */
     public function create()
     {
-        return view('')
+        return view('inventor.profil.edit');
         
     }
 
