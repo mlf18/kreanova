@@ -83,6 +83,15 @@ class ProfilController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $profil= Profil::find($id);
+        $profil->nama=$request->input('nama');
+        $profil->alamat=$request->input('alamat');
+        $profil->no_telp=$request->input('no_telp');
+        $profil->kabupaten=$request->input('kabupaten');
+        $profil->email=$request->input('email');
+        $profil->temuan=$request->input('inovasi');
+        $profil->save();
+        return redirect('profil/create')->with('success','Data Telah Diubah');
     }
 
     /**
