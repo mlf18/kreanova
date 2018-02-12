@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
 use App\Profil;
+
+use DB;
+
 
 class ProfilController extends Controller
 {
@@ -28,7 +33,9 @@ class ProfilController extends Controller
      */
     public function create()
     {
-        return view('inventor.profil.edit');
+        $user_id=Auth::user()->id;
+        $profils=DB::table('profils')->where('user_id','=',$user_id)->get();
+        return view('inventor.profil.edit')->with(['profils'=>$profils]);
         
     }
 
