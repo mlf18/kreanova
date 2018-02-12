@@ -84,6 +84,14 @@ class ProfilController extends Controller
     {
         //
         $profil= Profil::find($id);
+        $this->validate($request,[
+            'nama'=> 'required',
+            'alamat'=>'required',
+            'no_telp'=>'required',
+            'kabupaten'=>'required',
+            'email'=>'required',
+            'inovasi'=>'required'
+        ]);
         $profil->nama=$request->input('nama');
         $profil->alamat=$request->input('alamat');
         $profil->no_telp=$request->input('no_telp');

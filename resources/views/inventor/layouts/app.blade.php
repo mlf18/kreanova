@@ -17,48 +17,48 @@
   <link href="{{url('back_end/css/sb-admin.css')}}" rel="stylesheet">
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-                <a class="navbar-brand" href="index.html">Dashboard Inventor</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                  <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Data Invetor">
-                      <a class="nav-link" href="{{url('profil/create')}}">
-                        <i class="fa fa-fw fa-user"></i>
-                        <span class="nav-link-text">Profil Inventor</span>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Penganjuan Proposal">
-                      <a class="nav-link" href="proposal.html">
-                        <i class="fa fa-fw fa-file-text"></i>
-                        <span class="nav-link-text">Penganjuan Proposal</span>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Ganti Password">
-                      <a class="nav-link" href="password.html">
-                        <i class="fa fa-fw fa-key"></i>
-                        <span class="nav-link-text">Ganti Password</span>
-                      </a>
-                    </li>
-                  </ul>
-                  <ul class="navbar-nav sidenav-toggler">
-                    <li class="nav-item">
-                      <a class="nav-link text-center" id="sidenavToggler">
-                        <i class="fa fa-fw fa-angle-left"></i>
-                      </a>
-                    </li>
-                  </ul>
-                  <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-                        <i class="fa fa-fw fa-sign-out"></i>Keluar</a>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
-              @yield('content')
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <a class="navbar-brand" href="{{url('/profil')}}">Dashboard Inventor</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Data Invetor">
+            <a class="nav-link" href="{{url('profil/create')}}">
+              <i class="fa fa-fw fa-user"></i>
+              <span class="nav-link-text">Profil Inventor</span>
+            </a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Penganjuan Proposal">
+            <a class="nav-link" href="#">
+              <i class="fa fa-fw fa-file-text"></i>
+              <span class="nav-link-text">Penganjuan Proposal</span>
+            </a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Ganti Password">
+            <a class="nav-link" href="#">
+              <i class="fa fa-fw fa-key"></i>
+              <span class="nav-link-text">Ganti Password</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav sidenav-toggler">
+          <li class="nav-item">
+            <a class="nav-link text-center" id="sidenavToggler">
+              <i class="fa fa-fw fa-angle-left"></i>
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+              <i class="fa fa-fw fa-sign-out"></i>Keluar</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    @yield('content')
     <script src="{{url('back_end/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{url('back_end/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- Core plugin JavaScript-->
