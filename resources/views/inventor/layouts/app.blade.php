@@ -70,5 +70,30 @@
     <script src="{{url('back_end/js/sb-admin.min.js')}}"></script>
     <!-- Custom scripts for this page-->
     <script src="{{url('back_end/js/sb-admin-datatables.min.js')}}"></script>
+    <script>
+      $(document).ready(function(){
+        $("#lanjutkan_pendaftaran").click(function(){
+            $("#pendaftaran").removeClass("active");
+            $("#pendaftaran").removeClass("show");
+            $("#pendaftaran-tab").removeClass("active");
+            $("#pendaftaran-tab").removeClass("show");
+            $("#kuesioner-tab").addClass("active");
+            $("#kuesioner-tab").addClass("show");
+            $("#kuesioner").addClass("active");
+            $("#kuesioner").addClass("show");
+        });
+        $("#lanjutkan_kuesioner").click(function(){
+          $("#kuesioner-tab").removeClass("active");
+          $("#kuesioner-tab").removeClass("show");
+          $("#kuesioner").removeClass("active");
+          $("#kuesioner").removeClass("show");
+          $("#proposal").addClass("active");
+          $("#proposal").addClass("show");
+          $("#proposal-tab").addClass("active");
+          $("#proposal-tab").addClass("show");
+          
+      });
+    });
+    </script>
 </body>
 </html>

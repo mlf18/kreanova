@@ -110,12 +110,6 @@ class PengusulController extends Controller
 
         }
 
-        
-
-        
-
-
-
         return redirect('pengusul')->with('success', 'Saved');
 
     }
