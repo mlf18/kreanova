@@ -10,6 +10,6 @@ class Temuan extends Model
 
  	public function profils() 
  	{
- 		return $this->belongsToMany(Profil::class);
+ 		return $this->belongsTo('App\Profil');
  	}
 }

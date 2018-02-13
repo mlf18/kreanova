@@ -33,9 +33,8 @@ class ProfilController extends Controller
      */
     public function create()
     {
-        $user_id=Auth::user()->id;
-        $profils=Profil::where('user_id','=',$user_id)->get();
-        return view('inventor.profil.edit')->with(['profils'=>$profils]);
+        $profil=Auth::user()->profils;
+        return view('inventor.profil.edit')->with(['profil'=>$profil]);
         
     }
 

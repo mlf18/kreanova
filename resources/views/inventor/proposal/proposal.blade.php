@@ -1,8 +1,9 @@
 <div class="tab-pane fade" id="proposal" role="tabpanel" aria-labelledby="proposal-tab">
+    
         <form>
             <div class="form-group">
                 <label for="proposal_judul">Judul</label>
-                <input type="text" class="form-control" id="proposal_judul" name="proposal_judul">
+                <input type="text" class="form-control" id="proposal_judul" name="proposal_judul" value="{{$profil->temuan}}" disabled>
             </div>
             <div class="form-group">
                 <label for="proposal_abstrak">Abstrak / Ringkasan Eksekutif</label>
@@ -55,10 +56,6 @@
             <div class="form-group">
                 <label for="proposal_file_4"></label>
                 <input type="file" class="form-control-file" id="proposal_file_4" name="proposal_file_4">
-            </div>
-            <div class="form-group">
-                <label for="proposal_surat_anggota">Surat Pengantar (Maksimal size 1 mb) <br><small>File pdf/jpg</small></label>
-                <input type="file" class="form-control-file" id="proposal_surat_pengantar" name="proposal_surat_pengantar">
             </div>
             <div class="form-group">
                 <label for="proposal_surat">Surat Pernyataan Keaslian Temuan (Maksimal size 1 mb) <br><small>File pdf/jpg</small></label>

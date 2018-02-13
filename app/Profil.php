@@ -8,10 +8,10 @@ class Profil extends Model
 {
     protected $fillable = ['id', 'kategori', 'nama', 'alamat', 'kabupaten', 'pekerjaan', 'jk', 'no_telp',' email', 'anggota_1', 'anggota_2', 'anggota_3', 'anggota_4', 'anggota_5', 'judul', 'temuan', 'pengembangan'];
 
-    public function pengusuls()
-    {
-    	return $this->belongsToMany(Pengusul::class);
-    }
+    // public function pengusuls()
+    // {
+    // 	return $this->belongsToMany(Pengusul::class);
+    // }
 
     public function proposals()
     {
@@ -20,6 +20,12 @@ class Profil extends Model
 
     public function temuans()
     {
-    	return $this->belongsToMany(Temuan::class);
+    	return $this->hasMany(Temuan::class);
     }
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+    // public function pengusuls(){
+    //     return $this->belongsTo('App\Pengusul');
+    // }
 }

@@ -31,7 +31,6 @@
                                     {{session('error')}}
                                 </div>
                             @endif
-                        @foreach($profils as $profil)
                         <form method="post" action="{{url('/profil/'.$profil->id)}}">
                             {{ csrf_field() }}
                             {{ method_field('PATCH') }}
@@ -100,7 +99,6 @@
                             </div>
                             <button type="submit" class="btn btn-primary">Simpan</button>
                         </form>
-                        @endforeach
                     </div>
                 </div>
             </div>

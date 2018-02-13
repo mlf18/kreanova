@@ -71,4 +71,7 @@ class User extends Authenticatable
         }
         return $this->roles()->detach($role);
     }
+    public function profils(){
+        return $this->hasOne('App\Profil');
+    }
 }
