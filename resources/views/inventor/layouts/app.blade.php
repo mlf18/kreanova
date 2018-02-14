@@ -31,7 +31,7 @@
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Penganjuan Proposal">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{url('proposals/create')}}">
               <i class="fa fa-fw fa-file-text"></i>
               <span class="nav-link-text">Penganjuan Proposal</span>
             </a>
@@ -52,7 +52,7 @@
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <a class="nav-link" href="{{url('logout')}}">
               <i class="fa fa-fw fa-sign-out"></i>Keluar</a>
           </li>
         </ul>

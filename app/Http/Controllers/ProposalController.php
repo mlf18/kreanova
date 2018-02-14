@@ -22,8 +22,12 @@ class ProposalController extends Controller
     {
         // $proposal = Proposal::get();
         // return view('proposal.index', compact('proposal'));
-        $profil=Auth::user()->profils;
-        return view('inventor.proposal.create')->with(['profil'=>$profil]);
+        // $profil=Auth::user()->profils;
+        //Mengambil data pengusul berdasarkan id pengusul pada table profil
+        // $pengusul=$profil->pengusuls;
+        // print_r($profil);
+        // return view('inventor.proposal.create')->with(['profil'=>$profil,'pengusul'=>$pengusul]);
+        return redirect ('proposals/create');
     }
 
     public function get($filename){
@@ -46,7 +50,9 @@ class ProposalController extends Controller
 
         // return view('proposal.create', compact('profil'));
         $profil=Auth::user()->profils;
-        return view('inventor.proposal.create')->with(['profil'=>$profil]);
+        $pengusul=$profil->pengusul;
+        // var_dump ($pengusul->nama);
+        return view('inventor.proposal.create')->with(['profil'=>$profil,'pengusul'=>$pengusul]);
     }
 
     /**
@@ -101,47 +107,50 @@ class ProposalController extends Controller
         // $pengusul->lembaga=$request->input('lembaga_pengusul');
         // $pengusul->alamat=$request->input('alamat_pengusul');
         // $pengusul->no_telp=$request->input('no_telp_pengusul');
+        // $pengusul->kabupaten=$request->input('kabupaten_pengusul');
+        // $pengusul->user_id=2;
         // $pengusul->save();
         $profil=Auth::user()->profils;
-        $profil->kategori=$request->input('bidang_perorangan');
-        // $profil->alamat=$request->input('alamat_perorangan');
-        $profil->pekerjaan=$request->input('pekerjaan_perorangan');
-        // $profil->email=$request->input('alamat_email_perorangan');
-        // $profil->no_telp=$request->input('no_telp_perorangan');
-        $profil->kategori=$request->input('bidang_kelompok');
-        // $profil->alamat=$request->input('alamat_kelompok');
-        // $profil->email=$request->input('alamat_email_kelompok');
-        // $profil->no_telp=$request->input('no_hp_kelompok');
-        $profil->anggota_1=$request->input('nama_anggota_kelompok');
-        $profil->anggota_2=$request->input('nama_anggota_kelompok_2');
-        $profil->anggota_3=$request->input('nama_anggota_kelompok_3');
-        $profil->anggota_4=$request->input('nama_anggota_kelompok_4');
-        // $profil->temuan=$request->input('karya_usul_kelompok');
-        $profil->judul=$request->input('temuan_baru_kelompok');
-        $profil->pengembangan=$request->input('pengembangan_kelompok');
-        print_r($request->input('no_hp_kelompok'));
+        // $profil->kategori=$request->input('bidang_perorangan');
+        // // $profil->alamat=$request->input('alamat_perorangan');
+        // $profil->pekerjaan=$request->input('pekerjaan_perorangan');
+        // // $profil->email=$request->input('alamat_email_perorangan');
+        // // $profil->no_telp=$request->input('no_telp_perorangan');
+        // $profil->kategori=$request->input('bidang_kelompok');
+        // // $profil->alamat=$request->input('alamat_kelompok');
+        // // $profil->email=$request->input('alamat_email_kelompok');
+        // // $profil->no_telp=$request->input('no_hp_kelompok');
+        // $profil->anggota_1=$request->input('nama_anggota_kelompok');
+        // $profil->anggota_2=$request->input('nama_anggota_kelompok_2');
+        // $profil->anggota_3=$request->input('nama_anggota_kelompok_3');
+        // $profil->anggota_4=$request->input('nama_anggota_kelompok_4');
+        // // $profil->temuan=$request->input('karya_usul_kelompok');
+        // $profil->judul=$request->input('temuan_baru_kelompok');
+        // $profil->pengembangan=$request->input('pengembangan_kelompok');
+        // print_r($request->input('no_hp_kelompok'));
         // $profil->save();
-        // $temuan= new Temuans();
-        // $temuan->temuan_asli=$request->input('temuan_asli');
-        // $temuan->waktu_produksi=$request->input('waktu_produksi');
-        // $temuan->sudah_ada=$request->input('orisinalitas_alat');
-        // $temuan->ide_orang=$request->input('orisinalitas_ide');
-        // $temuan->komersial=$request->input('implementasi_komersil');
-        // $temuan->komersial_pihak=$request->input('implementasi_pihak');
-        // $temuan->asal_usul=$request->input('implementasi_asal_usul');
-        // $temuan->penerapan=$request->input('penerapan_temuan');
-        // $temuan->pelaku_penerapan=$request->input('penerapan_pelaku');
-        // $temuan->cakupan_penerapan=$request->input('penerapan_cakupan');
-        // $temuan->bahan_lokal=$request->input('bahan_baku_lokal');
-        // $temuan->kapasitas_produk=$request->input('manfaat_produktifitas');
-        // $temuan->tenaga_kerja=$request->input('manfaat_lapangan_pekerjaan');
-        // $temuan->prospek_tempat=$request->input('komersil_dimana');
-        // $temuan->prospek_cara=$request->input('komersil_cara');
-        // $temuan->prospek_biaya=$request->input('komersil_biaya');
-        // $temuan->omset=$request->input('komersil_omset');
-        // $temuan->asal_bahan=$request->input('komersil_bahan_baku');
-        // $temuan->quantity_bahan=$request->input('komersil_banyak');
-        // $temuan->orientasi=$request->input('komersil_kebutuhan');
+        $temuan= new Temuans();
+        $temuan->temuan_asli=$request->input('temuan_asli');
+        $temuan->waktu_produksi=$request->input('waktu_produksi');
+        $temuan->sudah_ada=$request->input('orisinalitas_alat');
+        $temuan->ide_orang=$request->input('orisinalitas_ide');
+        $temuan->komersial=$request->input('implementasi_komersil');
+        $temuan->komersial_pihak=$request->input('implementasi_pihak');
+        $temuan->asal_usul=$request->input('implementasi_asal_usul');
+        $temuan->penerapan=$request->input('penerapan_temuan');
+        $temuan->pelaku_penerapan=$request->input('penerapan_pelaku');
+        $temuan->cakupan_penerapan=$request->input('penerapan_cakupan');
+        $temuan->bahan_lokal=$request->input('bahan_baku_lokal');
+        $temuan->kapasitas_produk=$request->input('manfaat_produktifitas');
+        $temuan->tenaga_kerja=$request->input('manfaat_lapangan_pekerjaan');
+        $temuan->prospek_tempat=$request->input('komersil_dimana');
+        $temuan->prospek_cara=$request->input('komersil_cara');
+        $temuan->prospek_biaya=$request->input('komersil_biaya');
+        $temuan->omset=$request->input('komersil_omset');
+        $temuan->asal_bahan=$request->input('komersil_bahan_baku');
+        $temuan->quantity_bahan=$request->input('komersil_banyak');
+        $temuan->orientasi=$request->input('komersil_kebutuhan');
+        $temuan->profil_id=$profil->id;
         // $proposal= new Propsal();
         // $proposal->abstrak=$request->input('proposal_abstrak');
         // $proposal->latar_belakang=$request->input('proposal_latar_belakang');

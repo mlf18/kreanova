@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddPengusulIdProfilTable extends Migration
+class AddPengusulIdProfilsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,8 @@ class AddPengusulIdProfilTable extends Migration
     {
         //
         Schema::table('profils', function (Blueprint $table) {
-            $table->integer('pengusul_id')->after('pengembangan');
+            $table->integer('pengusul_id')->unsigned();
+            $table->foreign('pengusul_id')->references('id')->on('pengusuls');
         });
     }
 
@@ -27,6 +28,7 @@ class AddPengusulIdProfilTable extends Migration
     {
         //
         Schema::table('profils', function (Blueprint $table) {
+            $table->dropForeign(['pengusul_id']);
             $table->dropColumn('pengusul_id');
         });
     }

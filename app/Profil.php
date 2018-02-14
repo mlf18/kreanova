@@ -25,7 +25,7 @@ class Profil extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
-    // public function pengusuls(){
-    //     return $this->belongsTo('App\Pengusul');
-    // }
+    public function pengusul(){
+        return $this->belongsTo('App\Pengusul');
+    }
 }

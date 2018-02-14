@@ -5,7 +5,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item active">
-                <a href="index.html">Dashboard Inventor</a>
+                <a href="{{url('/profil')}}">Dashboard Inventor</a>
             </li>
         </ol>
         <div class="row">

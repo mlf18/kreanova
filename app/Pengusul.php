@@ -8,9 +8,9 @@ class Pengusul extends Model
 {
     protected $fillable = ['id', 'nama', 'jabatan',  'lembaga', 'alamat', 'no_telp'];
 
-    // public function profils()
-    // {
-    //     // return $this->belongsToMany(Profil::class);
-    //     return $this->hasMany('App\Profil');
-    // }
+    public function profil()
+    {
+        // return $this->belongsToMany(Profil::class);
+        return $this->hasOne('App\Profil');
+    }
 }
