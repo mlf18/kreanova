@@ -7,39 +7,39 @@
             </div>
             <div class="form-group">
                 <label for="proposal_abstrak">Abstrak / Ringkasan Eksekutif</label>
-                    <textarea class="form-control" id="proposal_abstrak" name="proposal_abstrak" rows="3" placeholder="Tuliskan Abstrak maksimal 500 kata"></textarea>
+                    <textarea class="form-control" id="proposal_abstrak" name="proposal_abstrak" rows="3" placeholder="Tuliskan Abstrak maksimal 500 kata">{{$proposal->abstrak}}</textarea>
             </div>
             <div class="form-group">
                 <label for="proposal_latar_belakang">Latar Belakang</label>
-                    <textarea class="form-control" id="proposal_latar_belakang" name="proposal_latar_belakang" rows="3" ></textarea>
+                    <textarea class="form-control" id="proposal_latar_belakang" name="proposal_latar_belakang" rows="3" >{{$proposal->latar_belakang}}</textarea>
             </div>
             <div class="form-group">
                 <label for="proposal_maksud_tujuan">Maksud dan Tujuan</label>
-                    <textarea class="form-control" id="proposal_maksud_tujuan" name="proposal_maksud_tujuan" rows="3" ></textarea>
+                    <textarea class="form-control" id="proposal_maksud_tujuan" name="proposal_maksud_tujuan" rows="3" >{{$proposal->maksud}}</textarea>
             </div>
             <div class="form-group">
                 <label for="proposal_manfaat">Manfaat</label>
-                <textarea class="form-control" id="proposal_manfaat" name="proposal_manfaat" rows="3" ></textarea>
+                <textarea class="form-control" id="proposal_manfaat" name="proposal_manfaat" rows="3" >{{$proposal->manfaat}}</textarea>
             </div>
             <div class="form-group">
                 <label for="proposal_spesifikasi">Spesifikasi Teknis</label>
-                <textarea class="form-control" id="proposal_spesifikasi" name="proposal_spesifikasi" rows="3" ></textarea>
+                <textarea class="form-control" id="proposal_spesifikasi" name="proposal_spesifikasi" rows="3" >{{$proposal->spek_teknik}}</textarea>
             </div>
             <div class="form-group">
                 <label for="proposal_keunggulan">Keunggulan dan Perbedaan bila dibandingkan  dengan penemuan sejenis sebelumnya </label>
-                <textarea class="form-control" id="proposal_keunggulan" name="proposal_keunggulan" rows="3" ></textarea>
+                <textarea class="form-control" id="proposal_keunggulan" name="proposal_keunggulan" rows="3" >{{$proposal->keunggulan}}</textarea>
             </div>
             <div class="form-group">
                 <label for="proposal_penerapan">Penerapan pada Masyarakat dan Dunia Industri</label>
-                <textarea class="form-control" id="proposal_penerapan" name="proposal_penerapan" rows="3" ></textarea>
+                <textarea class="form-control" id="proposal_penerapan" name="proposal_penerapan" rows="3" >{{$proposal->penerapan}}</textarea>
             </div>
             <div class="form-group">
                 <label for="proposal_perhitungan">Perhitungan Biaya Produksi Temuan/Inovasi</label>
-                <textarea class="form-control" id="proposal_perhitungan" name="proposal_perhitungan" rows="3" ></textarea>
+                <textarea class="form-control" id="proposal_perhitungan" name="proposal_perhitungan" rows="3" >{{$proposal->biaya_produksi}}</textarea>
             </div>
             <div class="form-group">
                 <label for="proposal_prospek">Prospek Bisnis / Komersialisasi</label>
-                <textarea class="form-control" id="proposal_prospek" name="proposal_prospek" rows="3"></textarea>
+                <textarea class="form-control" id="proposal_prospek" name="proposal_prospek" rows="3">{{$proposal->prospek_bisnis}}</textarea>
             </div>
             <div class="form-group">
                 <label for="proposal_file_1">Foto Produk (Maksimal size 1 mb) <br><small>File pdf/jpg</small></label>
@@ -89,6 +89,6 @@
                 <label for="proposal_foto_ktp">Foto KTP/Kartu Pelajar (Maksimal size 1 mb) <br><small>File pdf/jpg</small> </label>
                 <input type="file" class="form-control-file" id="proposal_foto_ktp" name="proposal_foto_ktp">
             </div>
-            <button type="submit" value="draft-proposal" name="submit" class="btn btn-primary">Simpan Draft</button> <button type="submit" class="btn btn-success">Kirim</button> 
+            <button type="submit" value="draft-proposal" name="submit" class="btn btn-primary" {{isset($proposal)?'disabled':''}}>Simpan Draft</button> <button type="submit" class="btn btn-success" {{isset($proposal)?'disabled':''}}>Kirim</button> 
         {{--  </form>  --}}
     </div>

@@ -11,7 +11,7 @@
             <p>
               Penghargaan KRENOVA adalah bentuk apresiasi dari Gubernur Jawa Tengah kepada para mitra dan inovator yang secara nyata mendukung dalam memajukan produk inovasi untuk masyarakat luas.
             </p>
-            <a href="tentang.html" class="btn btn-primary mt-3">Selengkapnya</a>
+            <a href="{{url('/tentang')}}" class="btn btn-primary mt-3">Selengkapnya</a>
               </center>
           </div>
         </div>
@@ -26,7 +26,7 @@
             <div class="features-icons-icon d-flex">
               <i class="icon-user m-auto text-primary"></i>
             </div>
-            <a href="pendaftaran_krenova.html" class="btn btn-primary"><h4>PENDAFTARAN KRENOVA 2018</h4></a>
+            <a href="{{url('/pendaftaran')}}" class="btn btn-primary"><h4>PENDAFTARAN KRENOVA 2018</h4></a>
             </div>
         </div>      
         <div class="col-lg-6">
@@ -34,7 +34,7 @@
             <div class="features-icons-icon d-flex">
               <i class="icon-check m-auto text-primary"></i>
             </div>
-            <a href="poling.html" class="btn btn-primary"><h4>POLLING KRENOVA </h4></a>
+            <a href="{{url('polling')}}" class="btn btn-primary"><h4>POLLING KRENOVA </h4></a>
           </div>
         </div>
       </div>

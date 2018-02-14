@@ -65,20 +65,19 @@
         </div>
       </nav>
 	@yield('content')
-
-	<footer class="footer" style="background:#C0C0C0;">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-              <h3>KONTAK KAMI:</h3>
-              <p>UPP IPTEKIN BAPPEDA PROVINSI JAWA TENGAH<br>
-              Jln. Imam Bonjol No. 190 Semarang, Jawa Tengah<br>
-              Website : uppiptekin.bappeda.jatengprov.go.id<br>
-              Email: uppiptekin.bappeda@jatengprov.go.id<br>
-              Phone: (024) 3540025, 3546063, 3521411<br>
-              Fax: (024)3560505</p>
-            </div>
-            <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+  <footer class="footer" style="background:#C0C0C0;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 text-center text-lg-left">
+            <h3>KONTAK KAMI:</h3>
+			<p>UPP IPTEKIN BAPPEDA PROVINSI JAWA TENGAH<br>
+			Jln. Imam Bonjol No. 190 Semarang, Jawa Tengah<br>
+			Website : uppiptekin.bappeda.jatengprov.go.id<br>
+			Email: uppiptekin.bappeda@jatengprov.go.id<br>
+			Phone: (024) 3540025, 3546063, 3521411<br>
+			Fax: (024)3560505</p>
+          </div>
+          <div class="col-lg-6 text-center text-lg-right my-auto">
               <ul class="list-inline mb-0">
                 <li class="list-inline-item mr-3">
                   <a href="https://www.facebook.com/iptekinjateng" target="_blank">
@@ -95,25 +94,24 @@
                     <i class="fa fa-instagram fa-2x fa-fw"></i>
                   </a>
                 </li>
-                <li class="list-inline-item">
+          <li class="list-inline-item">
                   <a href="http://uppiptekin.bappeda.jatengprov.go.id" target="_blank">
                     <i class="fa fa fa-globe fa-2x fa-fw"></i>
                   </a>
                 </li>
               </ul>
-              <br>
-              <a href="https://twitter.com/hashtag/KrenovaJateng" target="_blank"><h3>#KrenovaJateng</h3></a>
+        <br>
+        <a href="https://twitter.com/hashtag/KrenovaJateng" target="_blank"><h3>#KrenovaJateng</h3></a>
             </div>
-          </div>
         </div>
-  
-      </footer>
-      <footer class="py-5 bg-dark">
-        <div class="container">
-          <p class="m-0 text-center text-white">Copyright &copy; Krenova 2018</p>
-        </div>
-        <!-- /.container -->
-      </footer>
+      </div>
+    </footer>
+	<footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; UPP IPTEKIN BAPPEDA PROVINSI JAWA TENGAH 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
       
     <!-- Bootstrap core JavaScript-->
     <script src="{{url('front_end/vendor/jquery/jquery.min.js')}}"></script>

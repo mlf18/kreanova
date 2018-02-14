@@ -172,6 +172,6 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" value="draft-profil" name="submit" class="btn btn-primary">Simpan Daft</button> <a href="#" class="btn btn-secondary" id="lanjutkan_pendaftaran">Lanjutkan</a> 
+            <button type="submit" value="draft-profil" name="submit" class="btn btn-primary" {{isset($proposal)?'disabled':''}}>Simpan Daft</button> <a href="#" class="btn btn-secondary" id="lanjutkan_pendaftaran">Lanjutkan</a> 
         {{--  </form>  --}}
     </div>

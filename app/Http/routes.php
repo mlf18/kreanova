@@ -18,6 +18,8 @@ Route::get('/direktori', 'HomeController@direktori');
 Route::get('/polling', 'HomeController@polling');
 Route::get('/rekap', 'HomeController@rekap');
 Route::get('/daftar-pemenang', 'HomeController@daftarpemenang');
+Route::get('/tentang', 'HomeController@tentang');
+Route::get('/pendaftaran', 'HomeController@pendaftaran');
 Route::get('/superadmin', function(){
 	return ('superadmin');
 });

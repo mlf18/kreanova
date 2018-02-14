@@ -22,7 +22,7 @@ class CreateTemuansTable extends Migration
             $table->string('asal_usul');
             $table->string('komersial');
             $table->string('komersial_pihak');
-            $table->string('penarapan');
+            $table->string('penerapan');
             $table->string('pelaku_penerapan');
             $table->string('cakupan_penerapan');
             $table->string('bahan_lokal');

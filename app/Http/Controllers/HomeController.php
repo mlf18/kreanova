@@ -67,6 +67,18 @@ class HomeController extends Controller
         ];
         return view('content.polling.index')->with(['navbar'=>$nav]);
     }
+    public function tentang(){
+        $nav=[
+            '','','','active',''
+        ];
+        return view('content.tentang.index')->with(['navbar'=>$nav]);
+    }
+    public function pendaftaran(){
+        $nav=[
+            '','','','active',''
+        ];
+        return view('content.pendaftaran.index')->with(['navbar'=>$nav]);
+    }
     public function daftarpemenang(){
         $nav=[
             '','','','',''
