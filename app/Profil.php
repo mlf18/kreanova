@@ -18,14 +18,16 @@ class Profil extends Model
     	return $this->belongsToMany(Proposal::class);
     }
 
-    public function temuans()
-    {
-    	return $this->hasMany(Temuan::class);
-    }
     public function user(){
         return $this->belongsTo('App\User');
     }
     public function pengusul(){
         return $this->belongsTo('App\Pengusul');
+    }
+    public function temuans(){
+        return $this->hasOne('App\Temuan');
+    }
+    public function proposal(){
+        return $this->hasOne('App\Proposal');
     }
 }

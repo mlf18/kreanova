@@ -25,11 +25,16 @@
                                 <a class="nav-link" id="proposal-tab" data-toggle="tab" href="#proposal" role="tab" aria-controls="contact" aria-selected="false">Proposal</a>
                             </li>
                         </ul>
+                        <form method="POST" action="{{url('/proposals')}}" enctype="multipart/form-data">
+                            {{ csrf_field() }}
                         <div class="tab-content" id="myTabContent">
-                        @include('inventor.proposal.pendaftaran')    
-                        @include('inventor.proposal.kuesioner')    
-                        @include('inventor.proposal.proposal')    
+                        
+                            @include('inventor.proposal.pendaftaran')    
+                            @include('inventor.proposal.kuesioner')    
+                            @include('inventor.proposal.proposal')    
+                        
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>

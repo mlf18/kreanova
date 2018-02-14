@@ -1,5 +1,5 @@
 <div class="tab-pane fade" id="kuesioner" role="tabpanel" aria-labelledby="kuesioner-tab">
-        <form>
+        {{--  <form>  --}}
             <br>
             <p>A. ORISINALITAS DAN KEPIONIRAN</p>
             <div class="form-group">
@@ -92,6 +92,6 @@
                 <label for="komersil_kebutuhan">- Menjawab kebutuhan teknologi bagi masyarakat (saat ini & ke depan), jelaskan </label>
                 <input type="text" class="form-control" id="komersil_kebutuhan" name="komersil_kebutuhan">
             </div>
-            <button type="button" class="btn btn-primary">Simpan Daft</button> <a href="#" id="lanjutkan_kuesioner" class="btn btn-secondary">Lanjutkan</a> 
-        </form>
+            <button type="submit" value="draft-kuesioner" name="submit" class="btn btn-primary">Simpan Daft</button> <a href="#" id="lanjutkan_kuesioner" class="btn btn-secondary">Lanjutkan</a> 
+        {{--  </form>  --}}
     </div>

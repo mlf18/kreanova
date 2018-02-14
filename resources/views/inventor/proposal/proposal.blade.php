@@ -1,6 +1,6 @@
 <div class="tab-pane fade" id="proposal" role="tabpanel" aria-labelledby="proposal-tab">
     
-        <form>
+        {{--  <form>  --}}
             <div class="form-group">
                 <label for="proposal_judul">Judul</label>
                 <input type="text" class="form-control" id="proposal_judul" name="proposal_judul" value="{{$profil->temuan}}" disabled>
@@ -39,7 +39,7 @@
             </div>
             <div class="form-group">
                 <label for="proposal_prospek">Prospek Bisnis / Komersialisasi</label>
-                <textarea class="form-control" id="proposal_prospek" id="proposal_prospek" rows="3"></textarea>
+                <textarea class="form-control" id="proposal_prospek" name="proposal_prospek" rows="3"></textarea>
             </div>
             <div class="form-group">
                 <label for="proposal_file_1">Foto Produk (Maksimal size 1 mb) <br><small>File pdf/jpg</small></label>
@@ -89,6 +89,6 @@
                 <label for="proposal_foto_ktp">Foto KTP/Kartu Pelajar (Maksimal size 1 mb) <br><small>File pdf/jpg</small> </label>
                 <input type="file" class="form-control-file" id="proposal_foto_ktp" name="proposal_foto_ktp">
             </div>
-            <button type="button" class="btn btn-primary">Simpan Draft</button> <button type="submit" class="btn btn-success">Kirim</button> 
-        </form>
+            <button type="submit" value="draft-proposal" name="submit" class="btn btn-primary">Simpan Draft</button> <button type="submit" class="btn btn-success">Kirim</button> 
+        {{--  </form>  --}}
     </div>

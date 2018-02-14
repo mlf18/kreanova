@@ -1,6 +1,6 @@
 <div class="tab-pane fade show active" id="pendaftaran" role="tabpanel" aria-labelledby="pendaftaran-tab">
-        <form method="POST" action="{{url('/proposals')}}">
-            {{ csrf_field() }}
+        {{--  <form method="POST" action="{{url('/proposals')}}">
+            {{ csrf_field() }}  --}}
             <div class="form-group">
                 <br>
                 <h4>PENGUSUL</h4>
@@ -172,6 +172,6 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Simpan Daft</button> <a href="#" class="btn btn-secondary" id="lanjutkan_pendaftaran">Lanjutkan</a> 
-        </form>
+            <button type="submit" value="draft-profil" name="submit" class="btn btn-primary">Simpan Daft</button> <a href="#" class="btn btn-secondary" id="lanjutkan_pendaftaran">Lanjutkan</a> 
+        {{--  </form>  --}}
     </div>

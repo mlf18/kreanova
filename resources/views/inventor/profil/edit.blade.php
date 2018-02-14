@@ -36,15 +36,15 @@
                             {{ method_field('PATCH') }}
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Nama/Kelompok</label>
-                                <input type="text" class="form-control" id="Nama" name="nama" value="{{$profil->nama}}"/>
+                                <input type="text" class="form-control" id="Nama" name="nama" value="{{$profil->nama}}" {{!$profil->edit ? 'readonly':''}}/>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Alamat</label>
-                                <input type="text" class="form-control" id="Alamat" name="alamat" value="{{$profil->alamat}}"/>
+                                <input type="text" class="form-control" id="Alamat" name="alamat" value="{{$profil->alamat}}" {{!$profil->edit ? 'readonly':''}}/>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Kabupaten/Kota</label>
-                                <select class="form-control" id="Kabupaten" name="kabupaten">
+                                <select class="form-control" id="Kabupaten" name="kabupaten" {{!$profil->edit ? 'readonly':''}}>
                                     <option value="banjarnegara" {{$profil->kabupaten=='banjarnegara'?'selected':''}}>Kabupaten Banjarnegara</option>
                                     <option value="banyumas" {{$profil->kabupaten=='banyumas'?'selected':''}}>Kabupaten Banyumas</option>
                                     <option value="batang" {{$profil->kabupaten=='batang'?'selected':''}} >Kabupaten Batang</option>
@@ -87,17 +87,17 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">No Telepon/HP</label>
-                                <input type="text" class="form-control" id="no_telp" name="no_telp" value="{{$profil->no_telp}}"/>
+                                <input type="text" class="form-control" id="no_telp" name="no_telp" value="{{$profil->no_telp}}" {{!$profil->edit ? 'readonly':''}}/>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Alamat Email</label>
-                                <input type="email" class="form-control" id="email" name="email" value="{{$profil->email}}"/>
+                                <input type="email" class="form-control" id="email" name="email" value="{{$profil->email}}" {{!$profil->edit ? 'readonly':''}}/>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Judul Temuan/Inovasi</label>
-                                <input type="text" class="form-control" id="inovasi" name="inovasi" value="{{$profil->temuan}}" />
+                                <input type="text" class="form-control" id="inovasi" name="inovasi" value="{{$profil->temuan}}" {{!$profil->edit ? 'readonly':''}}/>
                             </div>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button type="submit" class="btn btn-primary {{!$profil->edit ? 'disabled':''}}" disabled="{{!$profil->edit ? 'disabled':''}}">Simpan</button>
                         </form>
                     </div>
                 </div>

@@ -34,7 +34,7 @@ class AuthController extends Controller
         if($user->role=="super"){
             return redirect('superadmin');
         }else{
-            return redirect('admins');
+            return redirect('profil');
         }
     }
 
