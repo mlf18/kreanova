@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Profil;
-
+use App\User;
 use DB;
 
 
@@ -33,8 +33,7 @@ class ProfilController extends Controller
      */
     public function create()
     {
-        $profil=Auth::user()->profils;
-        return view('inventor.profil.edit')->with(['profil'=>$profil]);
+        return view('adminkabkota.inventor.create');
         
     }
 
@@ -46,8 +45,24 @@ class ProfilController extends Controller
      */
     public function store(Request $request)
     {
-        Pengusul::create($request->all());
-        Profil::create($request->all());
+        $profil =  new Profil();
+        $user = new User();
+        $profil->nama=$request->input('nama');
+        $profil->alamat=$request->input('alamat');
+        $profil->no_telp=$request->input('no_telp');
+        $profil->pekerjaan=$request->input('pekerjaan');
+        $profil->kabupaten=$request->input('kabupaten');
+        $profil->email=$request->input('email');
+        $profil->temuan=$request->input('inovasi');
+        $profil->pengusul_id=Auth::user()->id;
+        $user->name=$request->input('username');
+        $user->password=bcrypt($request->input('password'));
+        $user->email=$request->input('email');
+        $user->role="inventor";
+        $user->save();
+        $profil->user_id=$user->id;
+        $profil->save();
+        // return redirect('adminkabkota/inventor');
     }
 
     /**
@@ -70,6 +85,8 @@ class ProfilController extends Controller
     public function edit($id)
     {
         //
+        $profil=Auth::user()->profils;
+        return view('inventor.profil.edit')->with(['profil'=>$profil]);
     }
 
     /**
